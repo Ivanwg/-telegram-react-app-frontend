@@ -1,21 +1,24 @@
+import { useTelegram } from "../../hooks/useTelegram";
 import Button from "../Button/Button";
 import './style.scss';
 
 
 
 function Header() {
-  const tg = window.Telegram.WebApp;
-
-  const onClose = () => {
-    tg.close();
-  }
+  const {onClose, user} = useTelegram();
 
 
+
+  
   return ( 
     <header className='header'>
       <Button onClick={onClose}>Закрыть</Button>
       <span className='username'>
-        {tg.initDataUnsafe?.user?.usernames}
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          user?.username
+        }
       </span>
     </header>
    );
