@@ -6,9 +6,9 @@ interface IBtnProps {
   onClick?: () => void;
 }
 
-function Button({classname, children}: IBtnProps) {
+function Button({classname, children, onClick}: IBtnProps) {
   return ( 
-    <button className={'btn'}>
+    <button className={'btn'} onClick={onClick}>
       {children}
     </button>
    );
