@@ -8,7 +8,7 @@ interface IBtnProps {
 
 function Button({classname, children}: IBtnProps) {
   return ( 
-    <button className={'btn ' + classname}>
+    <button className={'btn'}>
       {children}
     </button>
    );
